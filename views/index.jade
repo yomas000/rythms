@@ -11,5 +11,7 @@ block sidebar
   div.body
     each item in songName
       div.song
+        img(src="#{playIcon}", onclick="changeIcon(event);")
         p #{item}
-        audio(controls src="http://localhost/audio")
+        progress(max=100, value=1)
+        //- audio(controls src="http://localhost/audio")

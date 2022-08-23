@@ -62,6 +62,13 @@
     width: 20%;
 }
 
+.song img {
+  max-width: 50px;
+  max-height: 50px;
+  float: inherit;
+    display: inherit;
+}
+
 .song progress {
   width: 40%;
   height: 50px;
