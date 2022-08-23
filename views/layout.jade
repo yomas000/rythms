@@ -1,8 +1,14 @@
 doctype html
 html
   head
-    title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="icon", href="public/images/favicon.ico")
   body
+
+    div.topbar
+      h1 #{title}
+
+    block sidebar
+     
     block content 
     //- content is a hook for other layouts defined by the block keyword
