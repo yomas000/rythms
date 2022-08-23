@@ -1,11 +1,15 @@
 extends layout
 
-
 block sidebar 
   div.sidebar
     ul 
-      li hello 
-      li this 
-      li is
-      li a
-      li test
+      li 
+        img(src= "#{searchIcon}")
+      li 
+        img(src= "#{settingsIcon}")
+  
+  div.body
+    each item in songName
+      div.song
+        p #{item}
+        audio(controls src="http://localhost/audio")

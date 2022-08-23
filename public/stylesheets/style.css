@@ -20,21 +20,54 @@
   top: 0;
   left: 0;
   background-color: var(--on-background-color-darker);
+  max-width: 100px;
 }
 
 .topbar {
   float: top;
   width: 100%;
   opacity: 80%;
-  font-size: large;
+  font-size: 30px;
+  padding: 10px;
   background-color: var(--on-background-color-lighter);
 }
 
 .topbar h1 {
  margin: 0px;
- padding: 2%;
- padding-left: 150px;
+ padding-left: 110px;
 }
+
+
+.song {
+  background-color: var(--accent-color);
+  border-radius: 50px;
+  margin-left: 200px;
+  margin-right: 5%;
+  margin-top: 2%;
+  padding: 5px;
+  float: left;
+  width: 60%;
+  display: inline;
+}
+
+.song audio {
+  width: 60%;
+  background-color: var(--accent-color);
+}
+
+.song p {
+  float: inherit;
+    display: inherit;
+    padding-left: 5%;
+    width: 20%;
+}
+
+.song progress {
+  width: 40%;
+  height: 50px;
+  margin-left: 50px;
+}
+
 
 html, body {
   height: 100%;
@@ -46,7 +79,17 @@ html, body {
   color: white;
 }
 
-ul {
-  margin-top: 90%;
+.sidebar ul {
+  list-style: none;
+  margin-top: 120%;
   padding: 30px;
+}
+
+.sidebar ul img {
+  position: relative;
+  left: -10px;
+  padding: 0px;
+  padding-bottom: 50%;
+  width: 150%;
+  filter: invert(1);
 }
