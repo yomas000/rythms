@@ -1,10 +1,13 @@
 function changeIcon(e){
     let img = e.path[0]
+
     
     if (img.src == "http://localhost/public/images/play.png") {
         img.src = "http://localhost/public/images/pause.png"
+        document.getElementById('player').play()
     }else{
         img.src = "http://localhost/public/images/play.png"
+        document.getElementById('player').pause()
     }
 }
 
@@ -28,7 +31,6 @@ function makePost(){
                 // auto play
                 source.start(0); // start was previously noteOn
 
-                
             });
         };
 
