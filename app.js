@@ -6,6 +6,23 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var audioRouter = require("./routes/audio");
+var adminRouter = require("./routes/admin");
+
+// DataBase 
+var mysql = require("mysql");
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "esp_data"
+});
+con.connect(function (err) {
+  if (err) {
+    console.log('Error connecting to Db');
+    return;
+  }
+  console.log('Connection established');
+});
 
 var app = express();
 
@@ -22,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use("/audio", audioRouter);
+app.use("/admin", adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

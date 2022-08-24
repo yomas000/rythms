@@ -7,15 +7,17 @@ var url = require("url");
 router.get('/', function(req, res, next){
     var path = url.parse(req.url)
     var name = path.query.replace("songId=", "");
-    var music = `C:/Users/thomas/Music/${name}.wav`;
+    var music = `C:/Users/thoma/Music/${name}.wav`;
 
     var stat;
   
     console.log(name);
+
     try {
         stat = fs.statSync(music);
     } catch (error) {
-        music = `C:/Users/thomas/Music/${name}.mp3`;
+        music = `C:/Users/thoma/Music/${name}.mp3`;
+        stat = fs.statSync(music);
         console.log(music)
     }
 
