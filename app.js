@@ -14,8 +14,9 @@ var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "esp_data"
+  database: "music"
 });
+
 con.connect(function (err) {
   if (err) {
     console.log('Error connecting to Db');
@@ -36,6 +37,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// Make our db accessible to our router
+app.use(function (req, res, next) {
+  req.con = con;
+  next();
+});
+
 
 app.use('/', indexRouter);
 app.use("/audio", audioRouter);

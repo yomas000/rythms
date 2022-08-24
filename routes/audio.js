@@ -3,24 +3,28 @@ var router = express.Router();
 var fs = require("fs");
 util = require('util');
 var url = require("url");
+var music = "";
+
 
 router.get('/', function(req, res, next){
+    var db = req.con;
     var path = url.parse(req.url)
     var name = path.query.replace("songId=", "");
-    var music = `C:/Users/thoma/Music/${name}.wav`;
 
-    var stat;
-  
-    console.log(name);
+    var query = "SELECT * FROM indexMusic";
 
-    try {
-        stat = fs.statSync(music);
-    } catch (error) {
-        music = `C:/Users/thoma/Music/${name}.mp3`;
-        stat = fs.statSync(music);
-        console.log(music)
-    }
+    // music = `C:/Users/thoma/Music/${name}.mp3`;
 
+    db.query(query, function(err, rows){
+      for (let i = 0; i < rows.length; i++){
+        if (rows[i].songName.toLowerCase() == name.toLowerCase()){
+          music = rows[i].filepath;
+        }
+      }
+      console.log("Music: " + music)
+    }) 
+
+    stat = fs.statSync(music);
 
     range = req.headers.range;
     var readStream;
