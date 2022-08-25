@@ -5,10 +5,12 @@ html
     link(rel="icon", href="public/images/favicon.ico")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
     script(src="../public/scripts/index.js")
+    title #{title.charAt(0).toUpperCase() + title.slice(1)}
   body
 
     div.topbar
-      h1 #{title}
+      a(href="/")
+        h1 #{title}
 
     block sidebar
      

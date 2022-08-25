@@ -1,11 +1,22 @@
 extends layout 
 
 block content
-    table 
-        tr 
-            th Username 
-            th WeeklyScore 
-        each item in users
-            tr
-                th #{item.username} 
-                th #{item.wscore} 
+    div.admin
+        form(action="/admin/upload", method="post", enctype="multipart/form-data")#adminInput
+            ul
+                li
+                    label Song Name:
+                    input(type="text", name="songName")
+                li
+                    input(type="file", name="filetoupload")
+                li
+                    input(type="submit")
+    div.admin
+        table#dataTable
+            tr 
+                th Song Name 
+                th Filepath 
+            each item in users
+                tr
+                    th #{item.songName} 
+                    th #{item.filepath} 

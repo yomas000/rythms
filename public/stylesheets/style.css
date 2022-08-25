@@ -84,6 +84,10 @@ html, body {
   padding: 30px;
 }
 
+ul {
+  list-style: none;
+}
+
 .sidebar ul img {
   position: relative;
   left: -10px;
@@ -91,4 +95,39 @@ html, body {
   padding-bottom: 50%;
   width: 150%;
   filter: invert(1);
+}
+
+.admin {
+  background-color: var(--on-background-color-darker);
+  float: left;
+  display: inline;
+  width: 40%;
+  border-radius: 10px;
+  margin-left: 5%;
+  margin-top: 30px;
+  height: 70%;
+  overflow-x:auto;
+}
+
+#adminInput {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+ 
+#adminInput > ul > li > input{
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+#dataTable {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+a {
+  all: unset;
 }

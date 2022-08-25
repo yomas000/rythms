@@ -3,13 +3,13 @@ var router = express.Router();
 var fs = require("fs");
 util = require('util');
 var url = require("url");
-var music = "";
 
 
 router.get('/', function(req, res, next){
     var db = req.con;
     var path = url.parse(req.url)
-    var name = path.query.replace("songId=", "");
+    var name = path.query.replace("songId=", "").replace("=", "");
+    var music = "";
 
     var query = "SELECT * FROM indexMusic";
 
@@ -17,14 +17,15 @@ router.get('/', function(req, res, next){
 
     db.query(query, function(err, rows){
       for (let i = 0; i < rows.length; i++){
+        // console.log(rows[i].songName.toLowerCase() + " : " + name.toLowerCase())
         if (rows[i].songName.toLowerCase() == name.toLowerCase()){
           music = rows[i].filepath;
-        }
+        }  
       }
-      console.log("Music: " + music)
-    }) 
 
-    stat = fs.statSync(music);
+      // console.log("Music: " + music)
+
+    var stat = fs.statSync(music);
 
     range = req.headers.range;
     var readStream;
@@ -63,6 +64,9 @@ router.get('/', function(req, res, next){
       readStream = fs.createReadStream(music);
     }
     readStream.pipe(res);;
+
+    }) 
+
   });
   
   module.exports = router;

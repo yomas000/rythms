@@ -9,10 +9,10 @@ router.get('/', function(req, res, next) {
   var songs = []
 
   db.query("SELECT * FROM indexMusic", function(err, rows){
+
     for (let i = 0; i < rows.length; i++){
       songs.push(rows[i].songName);
     }
-    console.log(songs)
 
     res.render('index', { title: "rhythms", searchIcon: "../public/images/search.png", settingsIcon: "../public/images/settings.png", songName: songs });
   })
