@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var audioRouter = require("./routes/audio");
 var adminRouter = require("./routes/admin");
+var playlistRouter = require("./routes/playlist");
 
 // DataBase 
 var mysql = require("mysql");
@@ -47,6 +48,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use("/audio", audioRouter);
 app.use("/admin", adminRouter);
+app.use("/playlists", playlistRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {  //TODO: Make 404 error page
