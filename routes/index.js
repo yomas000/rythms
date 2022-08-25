@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
       songs.push(rows[i].songName);
     }
 
-    res.render('index', { title: "rhythms", searchIcon: "../public/images/search.png", settingsIcon: "../public/images/settings.png", songName: songs });
+    res.render('index', { title: "rhythms", searchIcon: "../public/images/search.png", settingsIcon: "../public/images/settings.png", playlistIcon: "../public/images/playlist.png", songName: songs });
   })
 
 });

@@ -2,6 +2,7 @@ extends layout
 
 block content
     div.admin
+        h3 Upload
         form(action="/admin/upload", method="post", enctype="multipart/form-data")#adminInput
             ul
                 li
@@ -11,11 +12,23 @@ block content
                     input(type="file", name="filetoupload")
                 li
                     input(type="submit")
+        
+        h3 Delete
+        form(action="/admin/delete", method="post", enctype="multipart/form-data")#adminInput
+            ul 
+                li 
+                    label Song Name: 
+                    select(name="songDelete")
+                        each item in users 
+                            option(value="#{item.songName}") #{item.songName}
+                
+                li 
+                    input(type="submit", value="Delete")
     div.admin
         table#dataTable
-            tr 
-                th Song Name 
-                th Filepath 
+            tr
+                th(style="padding-bottom: 20px;") Song Name 
+                th(style="padding-bottom: 20px;") Filepath 
             each item in users
                 tr
                     th #{item.songName} 

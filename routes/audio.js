@@ -8,7 +8,7 @@ var url = require("url");
 router.get('/', function(req, res, next){
     var db = req.con;
     var path = url.parse(req.url)
-    var name = path.query.replace("songId=", "").replace("=", "");
+    var name = path.query.replace("songId=", "").replace("=", "").replace("%20", " "); //TODO: Sanatize Inputs
     var music = "";
 
     var query = "SELECT * FROM indexMusic";

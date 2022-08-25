@@ -109,6 +109,11 @@ ul {
   overflow-x:auto;
 }
 
+.admin h3 {
+  margin-left: 10%;
+  padding-top: 3%;
+}
+
 #adminInput {
   width: 80%;
   margin-left: auto;
@@ -128,6 +133,37 @@ ul {
   margin-top: 5%;
 }
 
+#adminInput > ul > li > label {
+  margin-right: 5px;
+}
+
 a {
   all: unset;
+}
+
+button,  input, select {
+  padding: 10px;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 20px;
+  border-style: none;
+
+  transition: background-color 2s;
+}
+
+input[type=file]::file-selector-button {
+  background-color: var(--on-background-color-lighter);
+  padding: 10px;
+  border-style: none;
+  border-radius: 20px;
+  transition: background-color 0.5s;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: var(--accent-color);
+}
+
+button:hover, input:hover{
+  background-color: var(--on-background-color-lighter);
+  transition: background-color 0.5s;
 }
