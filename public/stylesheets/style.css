@@ -24,12 +24,14 @@
 }
 
 .topbar {
-  float: top;
+  /* float: top; */
   width: 100%;
   opacity: 80%;
   font-size: 30px;
   padding: 10px;
   background-color: var(--on-background-color-lighter);
+  position: sticky;
+  top: 0;
 }
 
 .topbar h1 {
@@ -62,13 +64,12 @@
     width: 20%;
 }
 
-audio::-webkit-media-controls-enclosure {
+audio::-webkit-media-controls-panel {
   border-radius: 5px;
   background-color: var(--accent-color);
 }
 
-
-html, body {
+body{
   height: 100%;
   margin: 0px;
   padding: 0px;
@@ -76,6 +77,11 @@ html, body {
   font-family: "air";
   background-color: var(--background-color);
   color: white;
+}
+
+html {
+  background-color: var(--background-color);
+  width: 100%;
 }
 
 .sidebar ul {
@@ -105,7 +111,7 @@ ul {
   border-radius: 10px;
   margin-left: 5%;
   margin-top: 30px;
-  height: 70%;
+  height: 700px;
   overflow-x:auto;
 }
 

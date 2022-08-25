@@ -56,7 +56,7 @@ router.post('/delete', function(req, res){
 
 
     form.parse(req, function(err, fields, files){
-        var songName = fields.songDelete
+        var songName = fields.songDelete   //TODO: Sanatize
 
         query = `SELECT * FROM indexMusic`
 

@@ -1,6 +1,9 @@
 extends layout 
 
 block content
+
+    button(style="float: left; margin: 30px; height: 700px;", onclick="history.back()") Back
+
     div.admin
         h3 Upload
         form(action="/admin/upload", method="post", enctype="multipart/form-data")#adminInput
