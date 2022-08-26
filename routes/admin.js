@@ -26,7 +26,7 @@ router.post('/upload', function(req, res, next){
         var form = new formidable.IncomingForm();
         form.parse(req, function (err, fields, files) {
             var songName = fields.songName;                                                                 //TODO: sanasize inputs
-            var oldpath = files.filetoupload.filepath;
+            var oldpath = files.filetoupload.filepath;                                                      //TODO: check file 
 
             var newpath = 'C:/Users/thoma/Music/' + files.filetoupload.originalFilename;
 

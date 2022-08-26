@@ -12,6 +12,10 @@
   --accent-color: #68507B;
 }
 
+#title {
+  font-family: "air";
+}
+
 .sidebar {
   float: left;
   height: 100%;
@@ -73,8 +77,7 @@ body{
   height: 100%;
   margin: 0px;
   padding: 0px;
-  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
-  font-family: "air";
+  font-family: cantarell,sans-serif;;
   background-color: var(--background-color);
   color: white;
 }
